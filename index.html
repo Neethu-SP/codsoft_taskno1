@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aether - Rule-Based Intelligent Chatbot</title>
+    <!-- Google Fonts for premium typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+
+    <main class="chat-wrapper">
+        <section class="chat-container">
+            <!-- Header section -->
+            <header class="chat-header">
+                <div class="bot-info">
+                    <div class="avatar-container">
+                        <div class="avatar-pulse"></div>
+                        <div class="avatar">
+                            <!-- SVG Avatar for Aether -->
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                <path d="M8 12L12 8L16 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M12 8V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="bot-details">
+                        <h1>Aether</h1>
+                        <div class="status-indicator">
+                            <span class="status-dot"></span>
+                            <span class="status-text">Online &bull; Rule Assistant</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <button id="clear-btn" title="Clear Chat" aria-label="Clear Chat">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M10 11v6M14 11v6"/>
+                        </svg>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Message Area -->
+            <div class="chat-messages" id="chat-messages">
+                <!-- Welcome/Initial message will be loaded dynamically by app.js -->
+            </div>
+
+            <!-- Typing indicator (hidden by default) -->
+            <div class="typing-indicator-container" id="typing-indicator" style="display: none;">
+                <div class="typing-bubble">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+
+            <!-- Footer area containing suggestion chips and input field -->
+            <footer class="chat-footer">
+                <!-- Suggestion Chips -->
+                <div class="suggestion-container" id="suggestion-container">
+                    <!-- Quick replies will be populated dynamically -->
+                </div>
+
+                <!-- Input area -->
+                <form class="input-form" id="input-form" autocomplete="off">
+                    <input 
+                        type="text" 
+                        id="user-input" 
+                        placeholder="Ask me something (e.g., 'tell me a joke')..." 
+                        maxlength="150" 
+                        required
+                    />
+                    <button type="submit" id="send-btn" aria-label="Send message">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
+                    </button>
+                </form>
+            </footer>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
